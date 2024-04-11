@@ -58,4 +58,16 @@ class Solution1 {
     }
 }
 
+// Leetcode 268 - with time complexity of O(n) using xor operation
 
+class Solution3 {
+    func missingNumber(_ arr: [Int]) -> Int {
+        var xor1 = 0, xor2 = 0
+        for i in 0..<arr.count{
+            xor1 = xor1^arr[i]
+            xor2 = xor2^i
+        }
+        xor2 = xor2^arr.count
+        return xor1^xor2
+    }
+}
